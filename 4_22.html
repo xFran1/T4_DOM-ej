@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h2>Lista dinámica</h2>
+
+    <ul id="lista">
+        <li>Javier Soldado</li>
+        <li>Rocio Alonso</li>
+        <li>Lidia Soldado</li>
+    </ul>
+    <hr>
+    Nuevo Texto <input id="nuevo_texto">
+    <br>
+    <button onclick="insertAdj()">Añadir elto con insertAdjacentHTML</button>
+    <br>
+    <button onclick="insertElmt()">Añadir elto con createElement</button>
+    <script>
+        function insertAdj(){
+            let lista=document.getElementById('lista')
+            let texto = document.getElementById('nuevo_texto')
+
+            let li = document.createElement("li")
+            
+            let textNode=document.createTextNode(texto.value)
+            li.appendChild(textNode)
+            lista.insertAdjacentElement("beforeend",li)
+
+            texto.value=""
+        }
+        function insertElmt(){
+            let lista=document.getElementById('lista')
+            let texto = document.getElementById('nuevo_texto')
+
+            let li = document.createElement("li")
+            
+            let textNode=document.createTextNode(texto.value)
+            li.appendChild(textNode)
+            lista.appendChild(li)
+            texto.value=""
+        }
+    </script>
+</body>
+</html>

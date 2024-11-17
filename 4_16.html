@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Modificación de tamaño de texto</h2>
+    <br><br>
+
+    <div id="container">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam consequatur praesentium minima voluptates dolorem labore. Aliquid, unde in dolorum ea tenetur nisi id architecto nihil quo quod laudantium, possimus maiores?
+    <br><br>
+
+
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum quis autem, eius a veniam doloremque aut incidunt hic at rem fugit vitae tenetur deserunt, magnam voluptatum amet ea cumque modi.
+    <br><br>
+
+
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia illum nostrum nemo dolorem, ducimus commodi impedit aperiam blanditiis, repellendus quis placeat perspiciatis earum necessitatibus. Tenetur doloremque autem voluptatibus dolores provident?
+    <br><br>
+    </div>
+    Seleccionar tamaño
+    <select  id="letter_size">
+        <option value="small">Small</option>
+        <option value="medium">Medium</option>
+        <option value="large">Large</option>
+    </select>
+    <button onclick="cambiar()">Cambiar</button>
+
+
+    <script>
+        function cambiar(){
+            let container = document.getElementById('container')
+            let size = document.getElementById('letter_size')
+            if(size.value=="small"){
+                container.style.fontSize="12px";
+            }else if(size.value=="medium"){
+                container.style.fontSize="26px";
+
+            }else {
+                container.style.fontSize="40px";
+
+            }
+            
+        }
+    </script>
+</body>
+</html>

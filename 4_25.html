@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Provincias: 
+    <select  id="provincias">
+        <option disabled selected>Amen</option>
+    </select> 
+    <button onclick="poblar()">Poblar</button>
+
+    <script>
+        let array_provincias = ["Huelva", "Sevilla", "Córdoba", "Jaén", "Almería", "Granada", "Málaga", "Cádiz"]
+        function poblar(){
+            let provincias = document.getElementById('provincias')
+            provincias.innerHTML=""
+            array_provincias.forEach(element => {
+                let option = document.createElement("option")
+                option.textContent=element
+                option.setAttribute("value",`${element}`);
+                provincias.appendChild(option);
+            });
+        }
+        document.getElementById("provincias").addEventListener("change",function(){
+            alert(`Seleccionaste: ${this.value}`)
+        })
+    </script>
+</body>
+</html>

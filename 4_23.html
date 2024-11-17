@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificar Divs Individualmente</title>
+   
+</head>
+<body>
+    <h1>Eliminar Divs Individualmente</h1>
+    <div  id="contenedor">
+        Texto <input id="txt_nuevo"><button onclick="insertar()">Insertar texto nuevo</button>
+    </div>
+
+    <script>
+        let contador=0;
+        let contenedor = document.getElementById('contenedor')
+
+        function insertar(){
+            let contenedor = document.getElementById('contenedor')
+
+        let div = document.createElement("div");
+        div.id=`div-${contador}`;
+ 
+            let div_texto = document.createElement("div");
+            div_texto.id=`texto-${contador}`
+            let txt_nuevo = document.getElementById('txt_nuevo')
+            div_texto.textContent=txt_nuevo.value
+
+            let boton_remove = document.createElement("div");
+            boton_remove.innerHTML = `<button onclick="borrar('${div.id}')">Borrar</button>`;
+            
+            let boton_copiar_encima = document.createElement("div");
+            boton_copiar_encima.innerHTML=`<button onclick="copiar('texto-${contador}')">Copiar encima</button>`;
+            
+            let boton_actualizar = document.createElement("div");
+            boton_actualizar.innerHTML=`<button onclick="actualizar('texto-${contador}')">Actualizar</button>`;
+            
+
+            div.style.display="flex";
+
+
+        div.appendChild(div_texto);
+        div.appendChild(boton_copiar_encima);
+        div.appendChild(boton_remove);
+        div.appendChild(boton_actualizar);
+        contenedor.insertAdjacentElement("beforeend",div);
+        contador++;
+
+        txt_nuevo.value="";
+       }
+       function actualizar(id){
+
+        let elemento = document.getElementById(id)
+        let texto_nuevo = document.getElementById('txt_nuevo');
+        elemento.textContent=texto_nuevo.value;
+        texto_nuevo.value=""
+
+    }
+       function copiar(id){
+        let elemento = document.getElementById(id)
+        elemento.textContent=elemento.textContent+" "+elemento.textContent;
+
+
+       }
+       function borrar(id){
+        let contenedor = document.getElementById('contenedor')
+        let elemento = document.getElementById(id);
+        
+        contenedor.removeChild(elemento);
+       }
+
+    </script>
+</body>
+</html>

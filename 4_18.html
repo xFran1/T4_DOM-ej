@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Cambiar visibilidad del texto</h2>
+
+    <div id="container">
+
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, maiores autem laboriosam assumenda ratione deserunt ut aliquam eos fugit, distinctio tempore. Saepe, soluta. Ratione similique iure non incidunt, sequi dolorum?
+        <br><br>
+        Natus reiciendis accusamus corporis atque hic sapiente esse doloremque, aspernatur molestias sequi, delectus odit ab nisi, ullam eos iste! Cum non dolores doloribus sunt quasi, ex alias provident fugit dolore.
+        <br><br>
+        Ea excepturi blanditiis cupiditate distinctio temporibus odio voluptate sit! Velit voluptatibus debitis suscipit sint cum similique possimus itaque, veniam vero expedita ratione doloremque delectus consectetur voluptatum. Optio blanditiis iure nostrum.
+        <br><br>
+    </div>
+        Seleccionar visibilidad 
+        <input type="checkbox" id="visibilidad">
+        <select id="display">
+            <option value="inline">Inline</option>
+            <option value="none">None</option>
+        </select>
+        <button onclick="modificar()">Ocultar</button>
+        <script>
+            function modificar(){
+                let container = document.getElementById('container')
+                let display = document.getElementById('display')
+                let visibilidad = document.getElementById('visibilidad')
+
+                if(visibilidad.checked){
+                    container.style.visibility="visible"
+                }else{
+                    container.style.visibility="hidden"
+                }
+                container.style.display=display.value;
+            }
+        </script>
+
+ 
+</body>
+</html>
